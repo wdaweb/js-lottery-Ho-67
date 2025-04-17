@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 用function製作威力彩號碼產生器將隨機出的數字用 document.write() 顯示在網頁上
+        // 威力彩規則
+        // A 區 1~38 取 6 個數字
+        // B 區 1~8 取 1 個數字
+        const a = () => {
+            let aNum = []
+            while (aNum.length < 6) {
+                let result = Math.floor(Math.random() * 38) + 1
+                if (!aNum.includes(result)) {
+                    aNum.push(result)
+                }
+            }
+            return aNum
+        }
+
+        const b = () => {
+            return Math.floor(Math.random() * 8) + 1
+        }
+
+        const A = a()
+        const B = b()
+        document.write(`A 區:${A}<br>B 區:${B}<br>`)
+    </script>
+</body>
+
+</html>
